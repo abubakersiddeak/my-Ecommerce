@@ -173,6 +173,7 @@ const Dashboard = () => {
               <Eye className="w-4 h-4" />
             </button>
           </div>
+
           <div className="space-y-4">
             {recentOrders.map((order, index) => (
               <div
@@ -225,6 +226,7 @@ const Dashboard = () => {
               <TrendingUp className="w-4 h-4" />
             </button>
           </div>
+
           <div className="space-y-4">
             {topProducts.map((product, index) => (
               <div
