@@ -9,6 +9,7 @@ import {
   X,
   Zap,
 } from "lucide-react";
+import Image from "next/image";
 
 const Sidebar = ({ activeTab, setActiveTab, sidebarOpen, setSidebarOpen }) => {
   const menuItems = [
@@ -39,11 +40,17 @@ const Sidebar = ({ activeTab, setActiveTab, sidebarOpen, setSidebarOpen }) => {
       >
         <div className="flex items-center justify-between h-16 px-6 border-b border-slate-200/60">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <Zap className="w-5 h-5 text-white" />
+            <div className="lg:w-15 lg:h-15 h-8 w-8 bg-gradient-to-br  rounded-lg flex items-center justify-center">
+              <Image
+                src={"/WEwork.svg"}
+                width={100}
+                height={100}
+                alt="weal logo"
+              />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              FutureShop
+            <span className="xl:text-2xl text-xl font-extrabold text-blue-900  ">
+              <span>WEAL</span> <span className="text-green-900">B</span>
+              <span className="text-red-600">D</span>
             </span>
           </div>
 

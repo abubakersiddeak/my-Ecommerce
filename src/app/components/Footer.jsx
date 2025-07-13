@@ -13,6 +13,7 @@ import {
   RotateCcw,
   Headphones,
 } from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -21,7 +22,7 @@ const Footer = () => {
       <div className="border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="flex items-center space-x-3">
+            {/* <div className="flex items-center space-x-3">
               <div className="w-12 h-12 bg-green-600 rounded-2xl flex items-center justify-center">
                 <Truck className="w-6 h-6 text-white" />
               </div>
@@ -29,9 +30,9 @@ const Footer = () => {
                 <div className="font-semibold">Free Shipping</div>
                 <div className="text-sm text-gray-400">On orders over $50</div>
               </div>
-            </div>
+            </div> */}
 
-            <div className="flex items-center space-x-3">
+            {/* <div className="flex items-center space-x-3">
               <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center">
                 <Shield className="w-6 h-6 text-white" />
               </div>
@@ -39,7 +40,7 @@ const Footer = () => {
                 <div className="font-semibold">Secure Payment</div>
                 <div className="text-sm text-gray-400">SSL Protected</div>
               </div>
-            </div>
+            </div> */}
 
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 bg-purple-600 rounded-2xl flex items-center justify-center">
@@ -69,16 +70,21 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center">
-                <ShoppingCart className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold">ShopHub</h1>
-                <p className="text-xs text-gray-400">Premium Store</p>
-              </div>
+            <div className="w-10 h-10 bg-gradient-to-r bg-white rounded-xl flex items-center justify-center shadow-lg">
+              <Image
+                src={"/WEwork.svg"}
+                width={100}
+                height={100}
+                alt="weal logo"
+              />
             </div>
-
+            <div>
+              <span className="xl:text-2xl text-xl font-extrabold text-blue-900  ">
+                <span>WEAL</span> <span className="text-green-900">B</span>
+                <span className="text-red-600">D</span>
+              </span>
+              <p className="text-xs text-gray-500">Online Store</p>
+            </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Your trusted destination for premium products with unbeatable
               prices and exceptional service.
@@ -87,15 +93,19 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm text-gray-400">
                 <MapPin className="w-4 h-4" />
-                <span>123 Commerce St, City, State 12345</span>
+                <a href="https://www.google.com/maps/place/WEAL/@23.5169625,90.2165641,3a,75y/data=!3m8!1e2!3m6!1sAF1QipNUgR43MfhmDBPfD1uKpBflIL246Af5sruGqgKY!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipNUgR43MfhmDBPfD1uKpBflIL246Af5sruGqgKY%3Dw114-h86-k-no!7i8160!8i6120!4m7!3m6!1s0x37559b0037c9c143:0xbafc08ccd0fc6c16!8m2!3d23.5168302!4d90.2166198!10e5!16s%2Fg%2F11wqj4qd51?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D">
+                  Bikrampur Shopping Mall,
+                  <br />
+                  Balasur, Sreenagor, Munshigonj
+                </a>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-400">
                 <Phone className="w-4 h-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>+8801403000212</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-400">
                 <Mail className="w-4 h-4" />
-                <span>support@shophub.com</span>
+                <span>wealbd2024@gmail.com</span>
               </div>
             </div>
           </div>
@@ -188,10 +198,10 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="text-sm text-gray-400">
-              © 2024 ShopHub. All rights reserved.
+              © 2025 WEAL BD. All rights reserved.
             </div>
 
-            <div className="flex items-center space-x-6">
+            {/* <div className="flex items-center space-x-6">
               <span className="text-sm text-gray-400">
                 Secure payments powered by:
               </span>
@@ -205,7 +215,7 @@ const Footer = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ const Hero = () => {
             <div className="space-y-4">
               <div className="inline-flex items-center space-x-2 bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-sm font-medium">
                 <Star className="w-4 h-4 fill-current" />
-                <span>Rated #1 Online Store</span>
+                <span>We don’t just sell products — We build trust.</span>
               </div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
@@ -40,13 +40,13 @@ const Hero = () => {
 
             {/* Trust Indicators */}
             <div className="grid grid-cols-3 gap-4 pt-6">
-              <div className="text-center">
+              {/* <div className="text-center">
                 <div className="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-2">
                   <Shield className="w-6 h-6 text-green-600" />
                 </div>
                 <div className="text-sm font-medium text-gray-900">Secure</div>
                 <div className="text-xs text-gray-500">SSL Protected</div>
-              </div>
+              </div> */}
 
               <div className="text-center">
                 <div className="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-2">
@@ -70,7 +70,7 @@ const Hero = () => {
           <div className="relative">
             <div className="relative z-10">
               <img
-                src="https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=1"
+                src="/8942321.jpg"
                 alt="Shopping Experience"
                 className="w-full h-80 lg:h-96 object-cover rounded-3xl shadow-2xl"
               />
@@ -100,13 +100,6 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-3xl transform rotate-3 -z-10"></div>
           </div>
         </div>
-      </div>
-
-      {/* Bottom Wave */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 120" className="w-full h-8 fill-white">
-          <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,58.7C960,64,1056,64,1152,58.7C1248,53,1344,43,1392,37.3L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
-        </svg>
       </div>
     </section>
   );

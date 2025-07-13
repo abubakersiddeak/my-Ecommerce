@@ -14,10 +14,18 @@ const Categories = ({ selectedCategory, onCategorySelect }) => {
   const categories = [
     { id: "all", name: "All", icon: Home, color: "from-gray-500 to-gray-600" },
     {
-      id: "electronics",
-      name: "Electronics",
-      icon: Smartphone,
+      id: "Sports",
+      name: "Sports",
+      icon: () => (
+        <img src="/13034.jpg" alt="Sports" className="w-full h-full rounded" />
+      ),
       color: "from-blue-500 to-blue-600",
+    },
+    {
+      id: "fashion",
+      name: "Fashion",
+      icon: Shirt,
+      color: "from-pink-500 to-pink-600",
     },
     {
       id: "audio",
@@ -48,12 +56,6 @@ const Categories = ({ selectedCategory, onCategorySelect }) => {
       name: "Gaming",
       icon: Gamepad2,
       color: "from-red-500 to-red-600",
-    },
-    {
-      id: "fashion",
-      name: "Fashion",
-      icon: Shirt,
-      color: "from-pink-500 to-pink-600",
     },
   ];
 
@@ -91,11 +93,11 @@ const Categories = ({ selectedCategory, onCategorySelect }) => {
                         : `bg-gradient-to-r ${category.color}`
                     }`}
                   >
-                    <Icon
-                      className={`w-5 h-5 ${
-                        isSelected ? "text-white" : "text-white"
-                      }`}
-                    />
+                    {typeof Icon === "function" ? (
+                      <Icon />
+                    ) : (
+                      <Icon className="w-5 h-5 text-white" />
+                    )}
                   </div>
                   <span className="text-xs font-medium text-center">
                     {category.name}
@@ -129,11 +131,11 @@ const Categories = ({ selectedCategory, onCategorySelect }) => {
                       : `bg-gradient-to-r ${category.color} group-hover:scale-110`
                   }`}
                 >
-                  <Icon
-                    className={`w-6 h-6 ${
-                      isSelected ? "text-white" : "text-white"
-                    }`}
-                  />
+                  {typeof Icon === "function" ? (
+                    <Icon />
+                  ) : (
+                    <Icon className="w-6 h-6 text-white" />
+                  )}
                 </div>
                 <span className="text-sm font-medium text-center">
                   {category.name}

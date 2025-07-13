@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Search, ShoppingCart, User, Menu, X, Heart } from "lucide-react";
+import Image from "next/image";
 
 const Header = ({
   cartItemsCount,
@@ -16,12 +17,20 @@ const Header = ({
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-              <ShoppingCart className="w-6 h-6 text-white" />
+            <div className="w-10 h-10 bg-gradient-to-r rounded-xl flex items-center justify-center shadow-lg">
+              <Image
+                src={"/WEwork.svg"}
+                width={100}
+                height={100}
+                alt="weal logo"
+              />
             </div>
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-gray-900">ShopHub</h1>
-              <p className="text-xs text-gray-500">Premium Store</p>
+            <div>
+              <span className="xl:text-2xl text-xl font-extrabold text-blue-900  ">
+                <span>WEAL</span> <span className="text-green-900">B</span>
+                <span className="text-red-600">D</span>
+              </span>
+              <p className="text-xs text-gray-500">Online Store</p>
             </div>
           </div>
 
