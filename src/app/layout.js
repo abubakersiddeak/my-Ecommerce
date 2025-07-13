@@ -10,9 +10,9 @@ export const metadata = {
   description:
     "Shop the latest sports at WEAL BD — your trusted online store in Bangladesh. Fast delivery, best prices, and top-notch customer service guaranteed.",
   icons: {
-    icon: "/WEwork.svg",
-    shortcut: "/WEwork.svg",
-    apple: "/WEwork.svg",
+    icon: "/Weal.png",
+    shortcut: "/Weal.png",
+    apple: "/Weal.png",
   },
   keywords: [
     "WEAL BD",
@@ -34,7 +34,7 @@ export const metadata = {
     siteName: "WEAL BD",
     images: [
       {
-        url: "/WEwork.svg",
+        url: "/Weal.png",
         width: 1200,
         height: 630,
         alt: "WEAL BD Online Store",
