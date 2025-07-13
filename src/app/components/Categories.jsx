@@ -19,43 +19,43 @@ const Categories = ({ selectedCategory, onCategorySelect }) => {
       icon: () => (
         <img src="/13034.jpg" alt="Sports" className="w-full h-full rounded" />
       ),
-      color: "from-blue-500 to-blue-600",
+      color: "bg-black",
     },
     {
       id: "fashion",
       name: "Fashion",
       icon: Shirt,
-      color: "from-pink-500 to-pink-600",
+      color: "bg-black",
     },
     {
       id: "audio",
       name: "Audio",
       icon: Headphones,
-      color: "from-purple-500 to-purple-600",
+      color: "bg-black",
     },
     {
       id: "computers",
       name: "Computers",
       icon: Laptop,
-      color: "from-green-500 to-green-600",
+      color: "bg-black",
     },
     {
       id: "wearables",
       name: "Wearables",
       icon: Watch,
-      color: "from-orange-500 to-orange-600",
+      color: "bg-black",
     },
     {
       id: "cameras",
       name: "Cameras",
       icon: Camera,
-      color: "from-indigo-500 to-indigo-600",
+      color: "bg-black",
     },
     {
       id: "gaming",
       name: "Gaming",
       icon: Gamepad2,
-      color: "from-red-500 to-red-600",
+      color: "bg-black",
     },
   ];
 
@@ -82,7 +82,7 @@ const Categories = ({ selectedCategory, onCategorySelect }) => {
                   onClick={() => onCategorySelect(category.id)}
                   className={`flex-shrink-0 flex flex-col items-center p-4 rounded-2xl transition-all duration-200 min-w-[80px] ${
                     isSelected
-                      ? "bg-indigo-600 text-white shadow-lg scale-105"
+                      ? "bg-black text-white shadow-lg scale-105"
                       : "bg-gray-50 text-gray-700 hover:bg-gray-100"
                   }`}
                 >
@@ -120,7 +120,7 @@ const Categories = ({ selectedCategory, onCategorySelect }) => {
                 onClick={() => onCategorySelect(category.id)}
                 className={`group flex flex-col items-center p-6 rounded-2xl transition-all duration-200 ${
                   isSelected
-                    ? "bg-indigo-600 text-white shadow-lg scale-105"
+                    ? "bg-black text-white shadow-lg scale-105"
                     : "bg-gray-50 text-gray-700 hover:bg-gray-100 hover:scale-105"
                 }`}
               >

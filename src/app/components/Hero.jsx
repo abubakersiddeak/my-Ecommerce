@@ -9,14 +9,14 @@ const Hero = () => {
           {/* Content */}
           <div className="space-y-6 lg:space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center space-x-2 bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-sm font-medium">
+              <div className="inline-flex items-center space-x-2 bg-indigo-100 text-black px-4 py-2 rounded-full text-sm font-medium">
                 <Star className="w-4 h-4 fill-current" />
                 <span>We don’t just sell products — We build trust.</span>
               </div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                 Discover Amazing
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+                <span className="block  bg-clip-text bg-gradient-to-r text-gray-700">
                   Products Daily
                 </span>
               </h1>
@@ -28,12 +28,12 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-2xl hover:shadow-lg hover:scale-105 transition-all duration-200 flex items-center justify-center space-x-2 font-semibold">
+              <button className="cursor-pointer bg-gradient-to-r bg-black text-white px-8 py-4 rounded-2xl hover:shadow-lg hover:scale-105 transition-all duration-200 flex items-center justify-center space-x-2 font-semibold">
                 <span>Start Shopping</span>
                 <ArrowRight className="w-5 h-5" />
               </button>
 
-              <button className="bg-white border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-2xl hover:border-indigo-300 hover:shadow-md transition-all duration-200 font-semibold">
+              <button className="bg-white cursor-pointer border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-2xl hover:border-indigo-300 hover:shadow-md transition-all duration-200 font-semibold">
                 View Deals
               </button>
             </div>
@@ -78,7 +78,7 @@ const Hero = () => {
               {/* Floating Stats */}
               <div className="absolute -top-4 -left-4 bg-white rounded-2xl p-4 shadow-xl border border-gray-100">
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
+                  <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center">
                     <span className="text-white text-sm font-bold">✓</span>
                   </div>
                   <div>

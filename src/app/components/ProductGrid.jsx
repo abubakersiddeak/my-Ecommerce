@@ -34,17 +34,17 @@ const ProductGrid = ({ selectedCategory, searchTerm, onAddToCart }) => {
   const getBadgeStyle = (badge) => {
     switch (badge) {
       case "Best Seller":
-        return "bg-green-500 text-white";
+        return "bg-black text-white";
       case "Limited":
-        return "bg-purple-500 text-white";
+        return "bg-black text-white";
       case "New":
-        return "bg-blue-500 text-white";
+        return "bg-black text-white";
       case "Sale":
-        return "bg-red-500 text-white";
+        return "bg-black text-white";
       case "Popular":
-        return "bg-orange-500 text-white";
+        return "bg-black text-white";
       default:
-        return "bg-gray-500 text-white";
+        return "bg-black text-white";
     }
   };
 
@@ -102,7 +102,7 @@ const ProductGrid = ({ selectedCategory, searchTerm, onAddToCart }) => {
 
                   {product.badge && (
                     <div
-                      className={`absolute top-3 left-3 px-2 py-1 rounded-lg text-xs font-bold ${getBadgeStyle(
+                      className={`absolute top-0 left-0 px-2 py-1 rounded-lg rounded-l-none text-xs font-bold ${getBadgeStyle(
                         product.badge
                       )}`}
                     >
@@ -175,7 +175,7 @@ const ProductGrid = ({ selectedCategory, searchTerm, onAddToCart }) => {
                     disabled={!product.inStock}
                     className={`w-full py-3 px-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center space-x-2 ${
                       product.inStock
-                        ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:shadow-lg hover:scale-105"
+                        ? "bg-black text-white hover:shadow-lg hover:scale-105"
                         : "bg-gray-200 text-gray-500 cursor-not-allowed"
                     }`}
                   >

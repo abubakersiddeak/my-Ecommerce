@@ -51,12 +51,12 @@ const Header = ({
           {/* Actions */}
           <div className="flex items-center space-x-2">
             {/* Mobile Search */}
-            <button className="md:hidden p-2.5 rounded-xl hover:bg-gray-100 transition-colors">
+            <button className="md:hidden p-2.5 cursor-pointer rounded-xl hover:bg-gray-100 transition-colors">
               <Search className="w-5 h-5 text-gray-600" />
             </button>
 
             {/* Wishlist */}
-            <button className="hidden sm:flex p-2.5 rounded-xl hover:bg-gray-100 transition-colors relative">
+            <button className="hidden cursor-pointer sm:flex p-2.5 rounded-xl hover:bg-gray-100 transition-colors relative">
               <Heart className="w-5 h-5 text-gray-600" />
               <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
                 2
@@ -66,7 +66,7 @@ const Header = ({
             {/* Cart */}
             <button
               onClick={onCartClick}
-              className="relative p-2.5 rounded-xl hover:bg-gray-100 transition-colors"
+              className="relative cursor-pointer p-2.5 rounded-xl hover:bg-gray-100 transition-colors"
             >
               <ShoppingCart className="w-5 h-5 text-gray-600" />
               {cartItemsCount > 0 && (
@@ -77,7 +77,7 @@ const Header = ({
             </button>
 
             {/* Profile */}
-            <button className="hidden sm:flex w-9 h-9 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl items-center justify-center shadow-lg">
+            <button className="hidden cursor-pointer sm:flex w-9 h-9 bg-black rounded-xl items-center justify-center shadow-lg">
               <User className="w-5 h-5 text-white" />
             </button>
 
