@@ -68,7 +68,7 @@ const FeaturedProducts = ({ onAddToCart }) => {
           {featuredProducts.map((product) => (
             <div
               key={product.id}
-              className="group bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-200/60 shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="group bg-white/80 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-200/60 shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
               <div className="relative overflow-hidden">
                 <img

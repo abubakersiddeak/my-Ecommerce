@@ -63,7 +63,7 @@ const Cart = ({ isOpen, onClose, items, onUpdateQuantity, totalPrice }) => {
             ) : (
               <div className="space-y-4">
                 {items.map((item) => (
-                  <div key={item.id} className="bg-gray-50 rounded-2xl p-4">
+                  <div key={item.id} className="bg-gray-50 rounded-xl p-4">
                     <div className="flex items-start space-x-4">
                       <img
                         src={item.image}

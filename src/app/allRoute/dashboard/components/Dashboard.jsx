@@ -101,20 +101,20 @@ const Dashboard = () => {
   return (
     <div className="space-y-6">
       {/* Welcome Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 text-white">
+      <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200  rounded-xl p-6 ">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
           <div>
             <h1 className="text-2xl md:text-3xl font-bold mb-2">
               Welcome back, Admin!
             </h1>
-            <p className="text-blue-100 text-sm md:text-base">
+            <p className="text-blue-900 text-sm md:text-base">
               Here's what's happening with your store today.
             </p>
           </div>
           <div className="mt-4 md:mt-0">
             <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 text-center">
               <div className="text-2xl font-bold">{new Date().getDate()}</div>
-              <div className="text-sm text-blue-100">
+              <div className="text-sm text-blue-900">
                 {new Date().toLocaleDateString("en-US", {
                   month: "short",
                   year: "numeric",

@@ -76,7 +76,7 @@ const Sidebar = ({ activeTab, setActiveTab, sidebarOpen, setSidebarOpen }) => {
                   w-full flex items-center space-x-3 px-4 py-3 mb-2 rounded-xl transition-all duration-200
                   ${
                     activeTab === item.id
-                      ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-500/25"
+                      ? "bg-gradient-to-br from-purple-50 to-purple-100 lg:text-2xl text-blue-600 font-extrabold  shadow-lg shadow-blue-500/25"
                       : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
                   }
                 `}

@@ -91,7 +91,7 @@ const ProductGrid = ({ selectedCategory, searchTerm, onAddToCart }) => {
             {filteredProducts.map((product) => (
               <div
                 key={product.id}
-                className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
+                className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
               >
                 <div className="relative overflow-hidden">
                   <img
