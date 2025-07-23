@@ -1,26 +1,1073 @@
-import React, { useMemo } from "react";
+"use client";
+import React, { useMemo, useState } from "react";
 import { Star, ShoppingCart, Heart, Eye } from "lucide-react";
+import { Poppins } from "next/font/google";
+const poppins = Poppins({
+  weight: "400",
+  display: "swap",
+  subsets: ["latin"],
+});
+const allProducts = [
+  {
+    id: 1,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 2,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 3,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 4,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 5,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 6,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 7,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 8,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 9,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 10,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 1,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 2,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 3,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 4,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 5,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 6,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 7,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 8,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 9,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 10,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 1,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 2,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 3,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 4,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 5,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 6,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 7,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 8,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 9,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 10,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 1,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 2,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 3,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 4,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 5,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 6,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 7,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 8,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 9,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 10,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 1,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 2,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 3,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 4,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 5,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 6,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 7,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 8,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 9,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 10,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 1,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 2,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 3,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 4,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 5,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 6,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 7,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 8,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 9,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 10,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 1,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 2,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 3,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 4,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 5,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 6,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 7,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 8,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 9,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 10,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 1,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 2,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 3,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 4,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 5,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 6,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 7,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 8,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 9,
+    name: "Wireless Pro Headphones",
+    price: 299.99,
+    originalPrice: 399.99,
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
+    category: "audio",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+  {
+    id: 10,
+    name: "Wireless Pro Headphones",
+    price: 399.99,
+    originalPrice: 399.99,
+    image:
+      "https://res-console.cloudinary.com/dmb58pab9/thumbnails/v1/image/upload/v1752733035/dXgwNXprbm1xY2JneHg4bnZnczk=/drilldown",
+    category: "Sports",
+    rating: 4.8,
+    reviews: 1247,
+    badge: "Best Seller",
+    inStock: true,
+  },
+];
 
 const ProductGrid = ({ selectedCategory, searchTerm, onAddToCart }) => {
-  const allProducts = [
-    {
-      id: 1,
-      name: "Wireless Pro Headphones",
-      price: 299.99,
-      originalPrice: 399.99,
-      image:
-        "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1",
-      category: "audio",
-      rating: 4.8,
-      reviews: 1247,
-      badge: "Best Seller",
-      inStock: true,
-    },
-    // ... baki products gula একই রকম
-  ];
+  // pagination Start
+  const [currentpage, setCurrentpage] = useState(1);
+  const itemPerPage = 20;
+  const indexOfLastItem = itemPerPage * currentpage;
+  const indexOfFirstItem = indexOfLastItem - itemPerPage;
+  const currentItems = allProducts.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPage = Math.ceil(allProducts.length / itemPerPage);
+  const handleNext = () => {
+    if (currentpage < totalPage) setCurrentpage((prev) => prev + 1);
+  };
+
+  const handlePrev = () => {
+    if (currentpage > 1) setCurrentpage((prev) => prev - 1);
+  };
 
   const filteredProducts = useMemo(() => {
-    return allProducts.filter((product) => {
+    return currentItems.filter((product) => {
       const matchesCategory =
         selectedCategory === "all" || product.category === selectedCategory;
       const matchesSearch =
@@ -30,6 +1077,14 @@ const ProductGrid = ({ selectedCategory, searchTerm, onAddToCart }) => {
       return matchesCategory && matchesSearch;
     });
   }, [selectedCategory, searchTerm]);
+  const totalProducts = useMemo(() => {
+    return allProducts.filter((product) => {
+      const matchesCategory =
+        selectedCategory === "all" || product.category === selectedCategory;
+
+      return matchesCategory;
+    });
+  }, [selectedCategory]);
 
   const getBadgeStyle = (badge) => {
     switch (badge) {
@@ -49,7 +1104,7 @@ const ProductGrid = ({ selectedCategory, searchTerm, onAddToCart }) => {
   };
 
   return (
-    <section className="py-8 lg:py-12 bg-gray-50">
+    <section className="py-8 lg:py-12 bg-[#FAF9F6]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-8">
           <div>
@@ -62,12 +1117,12 @@ const ProductGrid = ({ selectedCategory, searchTerm, onAddToCart }) => {
                   } Products`}
             </h2>
             <p className="text-gray-600 mt-1">
-              {filteredProducts.length} products found
+              {totalProducts.length} products found
               {searchTerm && ` for "${searchTerm}"`}
             </p>
           </div>
 
-          <select className="px-4 py-2 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+          <select className="px-4 py-2 bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
             <option>Sort by: Featured</option>
             <option>Price: Low to High</option>
             <option>Price: High to Low</option>
@@ -77,7 +1132,7 @@ const ProductGrid = ({ selectedCategory, searchTerm, onAddToCart }) => {
         </div>
 
         {filteredProducts.length === 0 ? (
-          <div className="text-center py-16">
+          <div className="text-center py-16 ">
             <div className="text-gray-400 text-6xl mb-4">🔍</div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">
               No products found
@@ -88,21 +1143,21 @@ const ProductGrid = ({ selectedCategory, searchTerm, onAddToCart }) => {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredProducts.map((product) => (
+            {filteredProducts.map((product, index) => (
               <div
-                key={product.id}
-                className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
+                key={index}
+                className="group bg-white  border-l-gray-500 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
               >
                 <div className="relative overflow-hidden">
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="cursor-pointer w-full h-78 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
 
                   {product.badge && (
                     <div
-                      className={`absolute top-0 left-0 px-2 py-1 rounded-lg rounded-l-none text-xs font-bold ${getBadgeStyle(
+                      className={`absolute top-0 left-0 px-2 py-1 rounded-lg rounded-l-none rounded-tr-none text-xs font-bold ${getBadgeStyle(
                         product.badge
                       )}`}
                     >
@@ -119,16 +1174,20 @@ const ProductGrid = ({ selectedCategory, searchTerm, onAddToCart }) => {
                   )}
 
                   <div className="absolute top-3 right-3 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <button className="w-9 h-9 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-white transition-colors shadow-lg">
+                    <button className="cursor-pointer w-9 h-9 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-white transition-colors shadow-lg">
                       <Heart className="w-4 h-4 text-gray-600" />
                     </button>
-                    <button className="w-9 h-9 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-white transition-colors shadow-lg">
+                    <button className="cursor-pointer w-9 h-9 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-white transition-colors shadow-lg">
                       <Eye className="w-4 h-4 text-gray-600" />
                     </button>
                   </div>
 
-                  {product.originalPrice && (
-                    <div className="absolute bottom-3 left-3 bg-red-500 text-white px-2 py-1 rounded-lg text-xs font-bold">
+                  {Math.round(
+                    ((product.originalPrice - product.price) /
+                      product.originalPrice) *
+                      100
+                  ) > 0 && (
+                    <div className="absolute bottom-0 right-0 bg-red-500 text-white px-2 py-1   text-xs font-bold">
                       -
                       {Math.round(
                         ((product.originalPrice - product.price) /
@@ -141,10 +1200,12 @@ const ProductGrid = ({ selectedCategory, searchTerm, onAddToCart }) => {
                 </div>
 
                 <div className="p-4">
-                  <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors line-clamp-2">
+                  <h3
+                    className={`${poppins.className} text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors line-clamp-2`}
+                  >
                     {product.name}
                   </h3>
-
+                  {/* 
                   <div className="flex items-center space-x-2 mb-3">
                     <div className="flex items-center space-x-1">
                       <Star className="w-4 h-4 text-yellow-400 fill-current" />
@@ -155,16 +1216,16 @@ const ProductGrid = ({ selectedCategory, searchTerm, onAddToCart }) => {
                     <span className="text-sm text-gray-500">
                       ({product.reviews})
                     </span>
-                  </div>
+                  </div> */}
 
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center space-x-2">
                       <span className="text-xl font-bold text-gray-900">
-                        ${product.price}
+                        TK: {product.price}
                       </span>
                       {product.originalPrice && (
                         <span className="text-sm text-gray-500 line-through">
-                          ${product.originalPrice}
+                          {product.originalPrice}
                         </span>
                       )}
                     </div>
@@ -173,9 +1234,9 @@ const ProductGrid = ({ selectedCategory, searchTerm, onAddToCart }) => {
                   <button
                     onClick={() => onAddToCart(product)}
                     disabled={!product.inStock}
-                    className={`w-full py-3 px-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center space-x-2 ${
+                    className={`w-full py-3 px-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center space-x-2 ${
                       product.inStock
-                        ? "bg-black text-white hover:shadow-lg hover:scale-105"
+                        ? "bg-black text-white hover:shadow-lg hover:scale-105 cursor-pointer"
                         : "bg-gray-200 text-gray-500 cursor-not-allowed"
                     }`}
                   >
@@ -193,6 +1254,23 @@ const ProductGrid = ({ selectedCategory, searchTerm, onAddToCart }) => {
             ))}
           </div>
         )}
+      </div>
+      <div className=" mt-15 flex items-center justify-center gap-5">
+        <button
+          onClick={handlePrev}
+          className=" font-extrabold py-3 px-6  cursor-pointer  text-black hover:scale-110"
+        >
+          {" "}
+          &lt; Back
+        </button>
+        <p className="text-cyan-500">Page No: {currentpage}</p>
+        <button
+          onClick={handleNext}
+          className="font-extrabold py-3 px-6  cursor-pointer  text-black hover:scale-110"
+        >
+          {" "}
+          Next &gt;
+        </button>
       </div>
     </section>
   );

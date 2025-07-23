@@ -70,15 +70,15 @@ const Header = ({
             >
               <ShoppingCart className="w-5 h-5 text-gray-600" />
               {cartItemsCount > 0 && (
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-indigo-600 text-white text-xs rounded-full flex items-center justify-center font-medium">
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-black text-white text-xs rounded-full flex items-center justify-center font-medium">
                   {cartItemsCount > 9 ? "9+" : cartItemsCount}
                 </span>
               )}
             </button>
 
             {/* Profile */}
-            <button className="hidden cursor-pointer sm:flex w-9 h-9 bg-black rounded-xl items-center justify-center shadow-lg">
-              <User className="w-5 h-5 text-white" />
+            <button className="hidden cursor-pointer sm:flex w-9 h-9  rounded-xl items-center justify-center shadow-lg">
+              <User className="w-5 h-5 " />
             </button>
 
             {/* Mobile Menu */}

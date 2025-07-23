@@ -22,7 +22,7 @@ const Cart = ({ isOpen, onClose, items, onUpdateQuantity, totalPrice }) => {
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-gray-50">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center">
                 <ShoppingBag className="w-5 h-5 text-white" />
               </div>
               <div>
@@ -55,7 +55,7 @@ const Cart = ({ isOpen, onClose, items, onUpdateQuantity, totalPrice }) => {
                 </p>
                 <button
                   onClick={onClose}
-                  className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-xl hover:shadow-lg transition-all duration-200 font-semibold"
+                  className="bg-black text-white px-6 py-3 rounded-xl hover:shadow-lg transition-all duration-200 font-semibold"
                 >
                   Start Shopping
                 </button>
@@ -92,7 +92,7 @@ const Cart = ({ isOpen, onClose, items, onUpdateQuantity, totalPrice }) => {
                               onClick={() =>
                                 onUpdateQuantity(item.id, item.quantity - 1)
                               }
-                              className="w-8 h-8 bg-white border border-gray-200 rounded-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
+                              className="w-8 h-8 cursor-pointer bg-white border border-gray-200 rounded-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
                             >
                               <Minus className="w-4 h-4" />
                             </button>
@@ -105,7 +105,7 @@ const Cart = ({ isOpen, onClose, items, onUpdateQuantity, totalPrice }) => {
                               onClick={() =>
                                 onUpdateQuantity(item.id, item.quantity + 1)
                               }
-                              className="w-8 h-8 bg-white border border-gray-200 rounded-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
+                              className="w-8 h-8 cursor-pointer bg-white border border-gray-200 rounded-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
                             >
                               <Plus className="w-4 h-4" />
                             </button>
@@ -113,7 +113,7 @@ const Cart = ({ isOpen, onClose, items, onUpdateQuantity, totalPrice }) => {
 
                           <button
                             onClick={() => onUpdateQuantity(item.id, 0)}
-                            className="w-8 h-8 bg-red-100 text-red-600 rounded-lg flex items-center justify-center hover:bg-red-200 transition-colors"
+                            className="w-8 h-8 cursor-pointer bg-red-100 text-red-600 rounded-lg flex items-center justify-center hover:bg-red-200 transition-colors"
                           >
                             <Trash2 className="w-4 h-4" />
                           </button>
@@ -163,14 +163,14 @@ const Cart = ({ isOpen, onClose, items, onUpdateQuantity, totalPrice }) => {
               )}
 
               <div className="space-y-3">
-                <button className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-4 px-4 rounded-xl hover:shadow-lg transition-all duration-200 font-semibold flex items-center justify-center space-x-2">
+                <button className="w-full cursor-pointer bg-black text-white py-4 px-4 rounded-xl hover:scale-105 hover:shadow-lg transition-all duration-200 font-semibold flex items-center justify-center space-x-2">
                   <span>Proceed to Checkout</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
 
                 <button
                   onClick={onClose}
-                  className="w-full bg-white border-2 border-gray-200 text-gray-700 py-3 px-4 rounded-xl hover:border-gray-300 transition-colors font-semibold"
+                  className="w-full bg-white border-2 cursor-pointer border-gray-200 text-gray-700 py-3 px-4 rounded-xl hover:border-gray-300 transition-colors font-semibold"
                 >
                   Continue Shopping
                 </button>

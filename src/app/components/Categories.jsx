@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Smartphone,
   Headphones,
   Laptop,
   Watch,
@@ -17,7 +16,11 @@ const Categories = ({ selectedCategory, onCategorySelect }) => {
       id: "Sports",
       name: "Sports",
       icon: () => (
-        <img src="/sports.png" alt="Sports" className="w-full h-full rounded" />
+        <img
+          src="/sports.png"
+          alt="Sports"
+          className="w-[70%] h-[70%] rounded"
+        />
       ),
       color: "bg-black",
     },

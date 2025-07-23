@@ -9,7 +9,7 @@ const Hero = () => {
           {/* Content */}
           <div className="space-y-6 lg:space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center space-x-2 bg-indigo-100 text-black px-4 py-2 rounded-full text-sm font-medium">
+              <div className="inline-flex items-center space-x-2 bg-indigo-100 text-black px-4 py-2 rounded-xl text-sm font-medium">
                 <Star className="w-4 h-4 fill-current" />
                 <span>We don’t just sell products — We build trust.</span>
               </div>
