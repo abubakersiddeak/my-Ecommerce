@@ -168,7 +168,7 @@ const Dashboard = () => {
         <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-slate-200/60 shadow-sm">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold text-slate-800">Recent Orders</h2>
-            <button className="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center space-x-1">
+            <button className="cursor-pointer text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center space-x-1">
               <span>View All</span>
               <Eye className="w-4 h-4" />
             </button>
@@ -221,7 +221,7 @@ const Dashboard = () => {
         <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-slate-200/60 shadow-sm">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold text-slate-800">Top Products</h2>
-            <button className="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center space-x-1">
+            <button className="cursor-pointer text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center space-x-1">
               <span>View All</span>
               <TrendingUp className="w-4 h-4" />
             </button>
@@ -265,22 +265,22 @@ const Dashboard = () => {
       <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-slate-200/60 shadow-sm">
         <h2 className="text-xl font-bold text-slate-800 mb-6">Quick Actions</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <button className="p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl hover:from-blue-100 hover:to-blue-200 transition-all duration-200 text-left">
+          <button className="cursor-pointer p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl hover:from-blue-100 hover:to-blue-200 transition-all duration-200 text-left">
             <Package className="w-6 h-6 text-blue-600 mb-2" />
             <div className="font-semibold text-slate-800">Add Product</div>
             <div className="text-xs text-slate-600">Create new product</div>
           </button>
-          <button className="p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-xl hover:from-green-100 hover:to-green-200 transition-all duration-200 text-left">
+          <button className="cursor-pointer p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-xl hover:from-green-100 hover:to-green-200 transition-all duration-200 text-left">
             <ShoppingBag className="w-6 h-6 text-green-600 mb-2" />
             <div className="font-semibold text-slate-800">Process Orders</div>
             <div className="text-xs text-slate-600">Manage orders</div>
           </button>
-          <button className="p-4 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl hover:from-purple-100 hover:to-purple-200 transition-all duration-200 text-left">
+          <button className="cursor-pointer p-4 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl hover:from-purple-100 hover:to-purple-200 transition-all duration-200 text-left">
             <Users className="w-6 h-6 text-purple-600 mb-2" />
             <div className="font-semibold text-slate-800">View Customers</div>
             <div className="text-xs text-slate-600">Customer management</div>
           </button>
-          <button className="p-4 bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl hover:from-orange-100 hover:to-orange-200 transition-all duration-200 text-left">
+          <button className="cursor-pointer p-4 bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl hover:from-orange-100 hover:to-orange-200 transition-all duration-200 text-left">
             <TrendingUp className="w-6 h-6 text-orange-600 mb-2" />
             <div className="font-semibold text-slate-800">Analytics</div>
             <div className="text-xs text-slate-600">View reports</div>

@@ -56,7 +56,7 @@ const Sidebar = ({ activeTab, setActiveTab, sidebarOpen, setSidebarOpen }) => {
 
           <button
             onClick={() => setSidebarOpen(false)}
-            className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
+            className="cursor-pointer lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -73,7 +73,7 @@ const Sidebar = ({ activeTab, setActiveTab, sidebarOpen, setSidebarOpen }) => {
                   setSidebarOpen(false);
                 }}
                 className={`
-                  w-full flex items-center space-x-3 px-4 py-3 mb-2 rounded-xl transition-all duration-200
+                  w-full cursor-pointer flex items-center space-x-3 px-4 py-3 mb-2 rounded-xl transition-all duration-200
                   ${
                     activeTab === item.id
                       ? "bg-gradient-to-br from-purple-50 to-purple-100 lg:text-2xl text-blue-600 font-extrabold  shadow-lg shadow-blue-500/25"

@@ -110,7 +110,7 @@ const Products = () => {
           </h1>
           <p className="text-slate-600 mt-1">Manage your product inventory</p>
         </div>
-        <button className="mt-4 md:mt-0 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center space-x-2 shadow-lg shadow-blue-500/25">
+        <button className="cursor-pointer mt-4 md:mt-0 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center space-x-2 shadow-lg shadow-blue-500/25">
           <Plus className="w-5 h-5" />
           <span>Add Product</span>
         </button>
@@ -143,12 +143,12 @@ const Products = () => {
               ))}
             </select>
 
-            <button className="px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl hover:bg-slate-100 transition-colors flex items-center space-x-2">
+            <button className="cursor-pointer px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl hover:bg-slate-100 transition-colors flex items-center space-x-2">
               <Filter className="w-4 h-4" />
               <span className="hidden sm:inline">Filter</span>
             </button>
 
-            <button className="px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl hover:bg-slate-100 transition-colors flex items-center space-x-2">
+            <button className="cursor-pointer px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl hover:bg-slate-100 transition-colors flex items-center space-x-2">
               <SortAsc className="w-4 h-4" />
               <span className="hidden sm:inline">Sort</span>
             </button>
@@ -212,14 +212,14 @@ const Products = () => {
               </div>
 
               <div className="flex space-x-2">
-                <button className="flex-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-200 flex items-center justify-center space-x-2">
+                <button className="cursor-pointer flex-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-200 flex items-center justify-center space-x-2">
                   <Eye className="w-4 h-4" />
                   <span>View</span>
                 </button>
-                <button className="bg-slate-100 text-slate-600 py-2 px-3 rounded-lg hover:bg-slate-200 transition-colors">
+                <button className="cursor-pointer bg-slate-100 text-slate-600 py-2 px-3 rounded-lg hover:bg-slate-200 transition-colors">
                   <Edit className="w-4 h-4" />
                 </button>
-                <button className="bg-red-100 text-red-600 py-2 px-3 rounded-lg hover:bg-red-200 transition-colors">
+                <button className="cursor-pointer bg-red-100 text-red-600 py-2 px-3 rounded-lg hover:bg-red-200 transition-colors">
                   <Trash2 className="w-4 h-4" />
                 </button>
               </div>

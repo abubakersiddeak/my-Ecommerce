@@ -140,7 +140,7 @@ const Customers = () => {
             Manage your customer relationships
           </p>
         </div>
-        <button className="mt-4 md:mt-0 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-200 flex items-center space-x-2 shadow-lg shadow-purple-500/25">
+        <button className="cursor-pointer mt-4 md:mt-0 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-200 flex items-center space-x-2 shadow-lg shadow-purple-500/25">
           <UserPlus className="w-5 h-5" />
           <span>Add Customer</span>
         </button>

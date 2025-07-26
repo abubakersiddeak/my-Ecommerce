@@ -7,7 +7,7 @@ const Header = ({ setSidebarOpen, sidebarOpen }) => {
       <div className="flex items-center space-x-4">
         <button
           onClick={() => setSidebarOpen(!sidebarOpen)}
-          className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
+          className="cursor-pointer lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
         >
           <Menu className="w-5 h-5" />
         </button>
@@ -23,12 +23,12 @@ const Header = ({ setSidebarOpen, sidebarOpen }) => {
       </div>
 
       <div className="flex items-center space-x-3">
-        <button className="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors">
+        <button className="cursor-pointer md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors">
           <Search className="w-5 h-5" />
         </button>
 
         <div className="relative">
-          <button className="p-2 rounded-lg hover:bg-slate-100 transition-colors relative">
+          <button className="cursor-pointer p-2 rounded-lg hover:bg-slate-100 transition-colors relative">
             <Bell className="w-5 h-5" />
             <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
               3
@@ -36,7 +36,7 @@ const Header = ({ setSidebarOpen, sidebarOpen }) => {
           </button>
         </div>
 
-        <button className="p-2 rounded-lg hover:bg-slate-100 transition-colors">
+        <button className="cursor-pointer p-2 rounded-lg hover:bg-slate-100 transition-colors">
           <MessageSquare className="w-5 h-5" />
         </button>
 

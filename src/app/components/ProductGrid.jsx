@@ -1147,7 +1147,7 @@ const allProducts = [
 const ProductGrid = ({ selectedCategory, searchTerm, onAddToCart }) => {
   // pagination Start
   const [currentpage, setCurrentpage] = useState(1);
-  const itemPerPage = 20;
+  const itemPerPage = 36;
   const indexOfLastItem = itemPerPage * currentpage;
   const indexOfFirstItem = indexOfLastItem - itemPerPage;
   const currentItems = allProducts.slice(indexOfFirstItem, indexOfLastItem);
@@ -1236,17 +1236,17 @@ const ProductGrid = ({ selectedCategory, searchTerm, onAddToCart }) => {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredProducts.map((product, index) => (
               <div
                 key={index}
-                className="group bg-white  border-l-gray-500 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
+                className="group bg-white  border-l-gray-500 overflow-hidden  shadow-sm hover:shadow-lg hover:shadow-amber-100 transition-all duration-300 border border-gray-100"
               >
                 <div className="relative overflow-hidden">
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="cursor-pointer w-full h-78 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="cursor-pointer w-full h-50 md:h-78 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
 
                   {product.badge && (
@@ -1293,9 +1293,9 @@ const ProductGrid = ({ selectedCategory, searchTerm, onAddToCart }) => {
                   )}
                 </div>
 
-                <div className="p-4">
+                <div className=" md:p-4">
                   <h3
-                    className={`${poppins.className} text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors line-clamp-2`}
+                    className={`${poppins.className} text-[10px] md:text-xl px-2 md:px-0 py-1 md:py-0 text-gray-900 md:mb-2 group-hover:text-indigo-600 transition-colors line-clamp-2`}
                   >
                     {product.name}
                   </h3>
@@ -1312,9 +1312,9 @@ const ProductGrid = ({ selectedCategory, searchTerm, onAddToCart }) => {
                     </span>
                   </div> */}
 
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="px-2 md:px-0 flex items-center justify-between mb-4">
                     <div className="flex items-center space-x-2">
-                      <span className="text-xl font-bold text-gray-900">
+                      <span className="md:text-xl font-bold text-gray-900">
                         TK: {product.price}
                       </span>
                       {product.originalPrice && (

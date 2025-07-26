@@ -44,7 +44,7 @@ const Settings = () => {
               <div>
                 <h3 className="text-xl font-bold text-slate-800">Admin User</h3>
                 <p className="text-slate-600">Super Administrator</p>
-                <button className="mt-2 text-blue-600 hover:text-blue-700 text-sm font-medium">
+                <button className="cursor-pointer mt-2 text-blue-600 hover:text-blue-700 text-sm font-medium">
                   Change Photo
                 </button>
               </div>
@@ -144,12 +144,12 @@ const Settings = () => {
                           [type]: !notifications[type],
                         })
                       }
-                      className={`w-12 h-6 rounded-full transition-colors ${
+                      className={`cursor-pointer w-12 h-6 rounded-full transition-colors ${
                         notifications[type] ? "bg-blue-500" : "bg-slate-300"
                       }`}
                     >
                       <div
-                        className={`w-5 h-5 bg-white rounded-full transition-transform ${
+                        className={`cursor-pointer w-5 h-5 bg-white rounded-full transition-transform ${
                           notifications[type]
                             ? "translate-x-6"
                             : "translate-x-0.5"
@@ -182,7 +182,7 @@ const Settings = () => {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                    className="cursor-pointer absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-slate-600"
                   >
                     {showPassword ? (
                       <EyeOff className="w-5 h-5" />
@@ -223,7 +223,7 @@ const Settings = () => {
                     Add an extra layer of security
                   </div>
                 </div>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                <button className="cursor-pointer bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
                   Setup
                 </button>
               </div>
@@ -260,7 +260,7 @@ const Settings = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200 ${
+                className={`cursor-pointer w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200 ${
                   activeTab === tab.id
                     ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg"
                     : "text-slate-600 hover:bg-slate-100"
@@ -278,7 +278,7 @@ const Settings = () => {
             {renderContent()}
 
             <div className="mt-8 pt-6 border-t border-slate-200 flex justify-end">
-              <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center space-x-2 shadow-lg shadow-blue-500/25">
+              <button className="cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center space-x-2 shadow-lg shadow-blue-500/25">
                 <Save className="w-5 h-5" />
                 <span>Save Changes</span>
               </button>

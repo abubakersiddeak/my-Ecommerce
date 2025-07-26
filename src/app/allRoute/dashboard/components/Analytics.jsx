@@ -79,11 +79,11 @@ const Analytics = () => {
           <p className="text-slate-600 mt-1">Track your business performance</p>
         </div>
         <div className="flex items-center space-x-2 mt-4 md:mt-0">
-          <button className="bg-white/80 backdrop-blur-sm border border-slate-200 text-slate-600 px-4 py-2 rounded-lg hover:bg-slate-50 transition-colors flex items-center space-x-2">
+          <button className="cursor-pointer bg-white/80 backdrop-blur-sm border border-slate-200 text-slate-600 px-4 py-2 rounded-lg hover:bg-slate-50 transition-colors flex items-center space-x-2">
             <Calendar className="w-4 h-4" />
             <span>Last 30 days</span>
           </button>
-          <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center space-x-2">
+          <button className="cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center space-x-2">
             <BarChart3 className="w-4 h-4" />
             <span>Export Report</span>
           </button>

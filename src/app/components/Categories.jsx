@@ -121,7 +121,7 @@ const Categories = ({ selectedCategory, onCategorySelect }) => {
               <button
                 key={category.id}
                 onClick={() => onCategorySelect(category.id)}
-                className={`group flex flex-col items-center p-6 rounded-xl transition-all duration-200 ${
+                className={`group cursor-pointer flex flex-col items-center p-6 rounded-xl transition-all duration-200 ${
                   isSelected
                     ? "bg-black text-white shadow-lg scale-105"
                     : "bg-gray-50 text-gray-700 hover:bg-gray-100 hover:scale-105"

@@ -146,7 +146,7 @@ const Orders = () => {
             Manage and track customer orders
           </p>
         </div>
-        <button className="mt-4 md:mt-0 bg-gradient-to-r from-green-600 to-blue-600 text-white px-6 py-3 rounded-xl hover:from-green-700 hover:to-blue-700 transition-all duration-200 flex items-center space-x-2 shadow-lg shadow-green-500/25">
+        <button className="cursor-pointer mt-4 md:mt-0 bg-gradient-to-r from-green-600 to-blue-600 text-white px-6 py-3 rounded-xl hover:from-green-700 hover:to-blue-700 transition-all duration-200 flex items-center space-x-2 shadow-lg shadow-green-500/25">
           <Download className="w-5 h-5" />
           <span>Export Orders</span>
         </button>
@@ -155,7 +155,7 @@ const Orders = () => {
       <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-slate-200/60 shadow-sm">
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex-1 relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
+            <Search className="cursor-pointer absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
             <input
               type="text"
               placeholder="Search orders by customer, ID, or product..."
@@ -169,7 +169,7 @@ const Orders = () => {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+              className="cursor-pointer px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
             >
               {statusOptions.map((status) => (
                 <option key={status} value={status}>
@@ -178,7 +178,7 @@ const Orders = () => {
               ))}
             </select>
 
-            <button className="px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl hover:bg-slate-100 transition-colors flex items-center space-x-2">
+            <button className="cursor-pointer px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl hover:bg-slate-100 transition-colors flex items-center space-x-2">
               <Filter className="w-4 h-4" />
               <span className="hidden sm:inline">More Filters</span>
             </button>
@@ -267,10 +267,10 @@ const Orders = () => {
                   </td>
                   <td className="p-4">
                     <div className="flex space-x-2">
-                      <button className="bg-blue-100 text-blue-600 p-2 rounded-lg hover:bg-blue-200 transition-colors">
+                      <button className="cursor-pointer bg-blue-100 text-blue-600 p-2 rounded-lg hover:bg-blue-200 transition-colors">
                         <Eye className="w-4 h-4" />
                       </button>
-                      <button className="bg-slate-100 text-slate-600 p-2 rounded-lg hover:bg-slate-200 transition-colors">
+                      <button className="cursor-pointer bg-slate-100 text-slate-600 p-2 rounded-lg hover:bg-slate-200 transition-colors">
                         <Edit className="w-4 h-4" />
                       </button>
                     </div>
